@@ -21,7 +21,7 @@ const Home: React.FC = () => {
         'contact': Contact
     };
 
-    const Component = components[menu];
+    const Component = components[menu] || Landing;
 
     React.useEffect(() => {
         setTimeout(() => {
