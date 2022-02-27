@@ -1,0 +1,6 @@
+/node_modules
+package.json
+tsconfig.json
+webpack.config.js
+.prettierc
+.prettierrcignore

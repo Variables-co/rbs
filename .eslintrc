@@ -1,0 +1,41 @@
+{
+    "extends": [
+      "prettier",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "requireConfigFile": false,
+    "plugins": ["module-resolver", "react", "prettier"],
+    "settings": {
+      "import/resolver": {
+        "typescript": {},
+        "babel-module": {},
+        "node": {
+          "paths": ["src"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
+    "parser": "@babel/eslint-parser",
+    "rules": {
+      "module-resolver/use-alias": 1,
+      "no-alert": 1,
+      "no-await-in-loop": 1,
+      "no-console": 1,
+      "no-unused-vars": ["error", { "args": "none" }],
+      "prettier/prettier": [
+        "warn"
+      ],
+      "import/order": [
+        "warn",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            ["internal", "sibling", "parent", "index"]
+          ]
+        }
+      ],
+      "react/no-deprecated": 0
+    }
+}

@@ -1,0 +1,74 @@
+@import "/src/assets/colors.scss";
+
+.container {
+    height: 60vh;
+    max-width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h6 {
+        opacity: 0;
+        color: $grey;
+        font-size: 2rem;
+        margin-top: 20%;
+        animation: 1.5s fadeIn forwards linear;
+        animation-delay: 200ms;
+    }
+}
+
+.lights {
+    width: 100%;
+    margin-top: 20%;
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    animation: 3s fadeIn forwards linear;
+    animation-delay: 1s;
+    .leftLight, .rightLight {
+        &::after {
+            display: block;
+            content: " ";
+            position: absolute;
+            background-color: $grey;
+            height: 5px;
+            width: 30px;
+        }
+        position: relative;
+        width: 50px;
+        height: 5px;
+        background: $grey;
+    }
+    .leftLight {
+        &::after{
+            left: 99%;
+            right: auto;
+            top: -75%;
+            transform: rotate(-15deg);
+        }
+        left: 0;
+        transform: rotate(5deg);
+    }
+    .rightLight {
+        &::after{
+            right: 100%;
+            left: auto;
+            top: -75%;
+            transform: rotate(15deg);
+        }
+        right: 0;
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

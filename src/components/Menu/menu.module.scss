@@ -1,0 +1,70 @@
+@import '/src/assets/colors.scss';
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    max-width: 50rem;
+    position: relative;
+    h6 {
+        display: inline-block;
+        text-transform: uppercase;
+        color: $primary; 
+        font-size: 300%;
+        margin-bottom: 1rem;
+        animation: 2s fadeIn forwards linear;
+        opacity: 0;
+    }    
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: uppercase;
+    width: 98%;
+    margin: 1rem auto;
+    padding: 0;
+    li {
+        opacity: 0;
+        animation: 1.5s fadeIn forwards linear;
+        animation-delay: 500ms;
+        display: inline-block;
+        & a {
+            color: $grey;
+            font-family: BebasNeue;
+            text-decoration: none;
+            &:hover {
+                color: $green;
+            }
+        }
+        margin: auto 2rem;
+        cursor: pointer;
+    }
+    :first-child {
+        margin-right: auto;
+        margin-left: 0;
+    }
+    :last-child {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+.active a {
+    color: $primary!important;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
