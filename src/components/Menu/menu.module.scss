@@ -2,12 +2,13 @@
 
 .container {
     margin: auto;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 80%;
+    width: 100%;
     max-width: 50rem;
     position: relative;
     h6 {
@@ -16,6 +17,7 @@
         color: $primary; 
         font-size: 300%;
         margin-bottom: 1rem;
+        margin-top: 3rem;
         animation: 2s fadeIn forwards linear;
         opacity: 0;
     }    
@@ -43,7 +45,7 @@
                 color: $green;
             }
         }
-        margin: auto 2rem;
+        margin: auto 2%;
         cursor: pointer;
     }
     :first-child {

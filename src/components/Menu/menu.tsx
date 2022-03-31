@@ -12,13 +12,13 @@ const Menu: React.FC = () => {
                 <Link to="/accueil">Accueil</Link>
             </li>
              <li className={menu === "nos-services" ? classes.active : ""}>
-                <Link to="/nos-services">Nos services</Link>
+                <Link to="/nos-services">Services</Link>
             </li>
              <li className={menu === "nos-forfaits" ? classes.active : ""}>
-                <Link to="/nos-forfaits">Nos forfaits</Link>
+                <Link to="/nos-forfaits">Forfaits</Link>
             </li>
              <li className={menu === "notre-materiel" ? classes.active : ""}>
-                <Link to="/notre-materiel">Notre matériel</Link>
+                <Link to="/notre-materiel">Matériel</Link>
             </li>
              <li className={menu === "contact" ? classes.active : ""}>
                 <Link to="/contact">Contact</Link>

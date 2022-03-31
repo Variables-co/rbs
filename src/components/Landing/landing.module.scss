@@ -1,9 +1,10 @@
 @import "/src/assets/colors.scss";
 
 .container {
-    height: 60vh;
     max-width: 50rem;
     margin: auto;
+    width: 100%;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +29,8 @@
     position: relative;
     animation: 3s fadeIn forwards linear;
     animation-delay: 1s;
-    .leftLight, .rightLight {
+    .leftLight,
+    .rightLight {
         &::after {
             display: block;
             content: " ";
@@ -43,7 +45,7 @@
         background: $grey;
     }
     .leftLight {
-        &::after{
+        &::after {
             left: 99%;
             right: auto;
             top: -75%;
@@ -53,7 +55,7 @@
         transform: rotate(5deg);
     }
     .rightLight {
-        &::after{
+        &::after {
             right: 100%;
             left: auto;
             top: -75%;

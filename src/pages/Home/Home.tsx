@@ -34,9 +34,11 @@ const Home: React.FC = () => {
             <Loading />
         </div>)
 
-    return (<div className={classes.container}>
-        <Menu />
-        <Component />
+    return (<div className={classes.loadedContainer}>
+        <div>
+            <Menu />
+            <Component />
+        </div>
     </div>)
 }
 

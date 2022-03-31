@@ -1,21 +1,29 @@
 {
-    "presets": [
-        "@babel/env",
-        "@babel/react",
-        "@babel/preset-typescript"
+  "presets": [
+    "@babel/react",
+    "@babel/preset-typescript",
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@components": "./src/components",
+          "@pages": "./src/pages",
+          "@assets": "./src/assets"
+        }
+      }
     ],
-    "plugins": [
-        "@babel/plugin-proposal-class-properties",
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "@components": "./src/components",
-              "@pages": "./src/pages",
-              "@assets": "./src/assets",
-          }
-          }
-        ]
-      ]
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
 }

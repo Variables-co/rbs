@@ -1,5 +1,23 @@
 @use "/src/assets/fonts.scss";
 
-.container {
+.container,
+.loadedContainer {
     margin: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.loadedContainer {
+    > div {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
 }
