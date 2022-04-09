@@ -24,6 +24,9 @@
         padding: 2rem;
         background-color: $grey;
     }
+    p {
+        line-height: 1.75rem;
+    }
 }
 
 @keyframes fadeIn {
