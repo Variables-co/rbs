@@ -26,13 +26,13 @@
             .row {
                 display: flex;
                 justify-content: space-between;
-                input {
+                input, select {
                     max-width: 48%;
                     box-sizing: border-box;
                 }
             }
         }
-        input, textarea {
+        input, textarea, select {
             font-size: 1.2rem;
             font-family: BebasNeue;
             background-color: transparent;

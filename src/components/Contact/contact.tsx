@@ -5,6 +5,7 @@ const Contact: React.FC = () => {
     const [response, setResponse] = React.useState("")
     const [nom, setNom] = React.useState("")
     const [entreprise, setEntreprise] = React.useState("")
+    const [secteur, setSecteur] = React.useState("")
     const [phone, setPhone] = React.useState("")
     const [mail, setMail] = React.useState("")
     const [message, setMessage] = React.useState("")
@@ -14,7 +15,7 @@ const Contact: React.FC = () => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ fields: {nom: nom, entreprise: entreprise, phone: phone, mail: mail, message: message} })
+            body: JSON.stringify({ fields: { nom: nom, entreprise: entreprise, secteur: secteur, phone: phone, mail: mail, message: message } })
         };
         fetch('https://api.airtable.com/v0/app5T1s3eOsHC6yW9/contact?api_key=key0c5v2v3pmHWujw', requestOptions)
             .then(() => {
@@ -35,7 +36,18 @@ const Contact: React.FC = () => {
             <form onSubmit={(e) => handleForm(e)}>
                 <div className={classes.row}>
                     <input type="text" placeholder='Nom' onChange={(e) => setNom(e.target.value)} />
-                    <input type="text" placeholder='Entreprise' onChange={(e) => setEntreprise(e.target.value)} />
+                </div>
+                <div className={classes.row}>
+                    <input type="text" placeholder='Société' onChange={(e) => setEntreprise(e.target.value)} />
+                    <select onChange={(e) => setSecteur(e.target.value)}>
+                        <option selected disabled>Secteur</option>
+                        <option>BTP</option>
+                        <option>Industriel</option>
+                        <option>Transport</option>
+                        <option>Immobilier</option>
+                        <option>Commercial</option>
+                        <option>Public</option>
+                    </select>
                 </div>
                 <div className={classes.row}>
                     <input type="mail" placeholder='Adresse mail' onChange={(e) => setMail(e.target.value)} />
