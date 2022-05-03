@@ -16,7 +16,7 @@ const Stuff: React.FC = () => {
         const getPictures = async () => {
             await fetch('https://api.airtable.com/v0/app5T1s3eOsHC6yW9/images?api_key=key0c5v2v3pmHWujw')
                 .then((res) => res.json())
-                .then(data => setImages(data.records))
+                .then(data => setImages(data?.records))
         }
         getPictures()
     }, [])
@@ -41,25 +41,17 @@ const Stuff: React.FC = () => {
                 mousewheel={true}
                 direction='vertical'
             >
-                {images.map((img) => {
+                {images?.map((img) => {
                     img = img.fields
-                    return <SwiperSlide key={img.name} >
-                        <h4 data-swiper-parallax="-300"
-                            data-swiper-parallax-duration="600">{img.description}</h4>
-                        <img data-swiper-parallax-opacity="0.5" alt={img.description} title={img.name} src={img.file[0].url} />
-                    </SwiperSlide>
+                    if (img?.file?.[0].url)
+                        return <SwiperSlide key={img.name} >
+                            <h4 data-swiper-parallax="-300"
+                                data-swiper-parallax-duration="600">{img.description}</h4>
+                            <img data-swiper-parallax-opacity="0.5" alt={img.description} title={img.name} src={img?.file?.[0].url} />
+                        </SwiperSlide>
+                    return;
                 })}
-                ...
             </Swiper>
-            {/* <ul>
-                {images.map((img) => {
-                    img = img.fields
-                    return <li key={img.name} >
-                        <h4>{img.description}</h4>
-                        <img alt={img.description} title={img.name} src={img.file[0].url} />
-                    </li>
-                })}
-            </ul> */}
         </div>
     </div>)
 }
