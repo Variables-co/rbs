@@ -2,7 +2,7 @@
   "name": "wecode-it",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.tsx",
+  "main": "/src/index.tsx",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --config webpack.config.js"
